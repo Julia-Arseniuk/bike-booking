@@ -8,7 +8,7 @@ const Stats = () => {
   const available = bikes.filter(el => el.status.value === 'available').length;
   const booked = bikes.filter(el => el.status.value === 'busy').length;
   
-  const averagePrice = bikes.reduce((accumulator, currentValue) => accumulator + +currentValue.price, 0) /  bikes.length;
+  const averagePrice = bikes.length > 0 ? bikes.reduce((accumulator, currentValue) => accumulator + +currentValue.price, 0) /  bikes.length : 0;
 
   return (
     <div className="statistics-block">
