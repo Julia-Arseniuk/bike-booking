@@ -40,6 +40,17 @@ const Form = () => {
       })
   };
 
+  const clearForm = () => {
+    setFormData({
+      name: '',
+      type: '',
+      color: '',
+      wheelSize: '',
+      price: '',
+      description: ''
+      })
+  }
+
   return (
     <div className="form-block">
       <form onSubmit={onSubmit} ref={formRef}>
@@ -116,7 +127,7 @@ const Form = () => {
           required
         ></textarea>
         <button type="submit">Save</button>
-        <button type="reset">Clear</button>
+        <button type="reset" onClick={clearForm}>Clear</button>
       </form>
     </div>
   );
